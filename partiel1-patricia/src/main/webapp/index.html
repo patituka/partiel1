@@ -1,0 +1,39 @@
+<!DOCTYPE html>
+<html>
+<head>
+<title>jQuery and web services</title>
+<meta name="viewport" content="width=device-width, initial-scale=1">
+<link rel="stylesheet" href="https://maxcdn.bootstrapcdn.com/bootstrap/4.1.0/css/bootstrap.min.css">
+<link rel="stylesheet" href="https://ajax.googleapis.com/ajax/libs/jqueryui/1.12.1/themes/smoothness/jquery-ui.css">
+<script src="https://ajax.googleapis.com/ajax/libs/jquery/3.3.1/jquery.min.js"></script>
+<script src="https://ajax.googleapis.com/ajax/libs/jqueryui/1.12.1/jquery-ui.min.js"></script>
+<script src="https://cdnjs.cloudflare.com/ajax/libs/popper.js/1.14.0/umd/popper.min.js"></script>
+<script src="https://maxcdn.bootstrapcdn.com/bootstrap/4.1.0/js/bootstrap.min.js"></script>
+
+<style type="text/css"></style>
+
+<script type="text/javascript">
+$(function() {
+	
+	$("#GETLASTTRANSFERT").click(function(){
+	    $.getJSON("http://localhost:8080/partiel1/api/transfert/", function(data){
+	   
+	    	var content = "IBAN=" + data.date + ", Sum=" + data.sum + ", IbanA=" + data.ibanA + " IbanB= " + 
+	    	data.ibanB;
+	    	content += " Flag URL=" + data.flag + "<div><img src='" + data.flag + " '\" width=\"100\"</div>" ;
+	    	$( "<div/>" , {
+	    	   html: content
+	    	}).appendTo( "body" );
+	    });
+	});
+});
+</script>
+
+</head>
+<body>
+	<div>
+		<button class="btn" id="GETLASTTRANSFERT">Click me to get the last transfert</button>
+		<button class="btn" id="GETTRANSFERTS">Click me to get all the transferts</button>
+	</div>
+</body>
+</html>
