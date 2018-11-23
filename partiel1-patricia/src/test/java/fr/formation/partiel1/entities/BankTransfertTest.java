@@ -8,7 +8,7 @@ import org.junit.jupiter.api.Test;
 
 public class BankTransfertTest {
 
-    private final static int SUM_BT = 100;
+    private final static int SUM_BT = 1000;
 
     private static Rib ribA = new Rib("30002", "00550", "0000123456Z", "25");
 
