@@ -8,12 +8,25 @@ public class Iban {
 
     private String clef;
 
-    private Rib rib;
+    private String rib;
 
+    /**
+     * @param code
+     * @param clef
+     * @param rib
+     */
     public Iban(String code, String clef, Rib rib) {
 	setCode(code);
 	setClef(clef);
 	setRib(rib);
+    }
+
+    public String getRib() {
+	return rib;
+    }
+
+    public void setRib(Rib rib) {
+	this.rib = rib.getRib();
     }
 
     public void setCode(String code) {
@@ -26,8 +39,8 @@ public class Iban {
 	this.clef = clef;
     }
 
-    public void setRib(Rib rib) {
-	this.rib = rib;
+    public String getIban() {
+	return code + " " + clef + " " + rib;
     }
 
     public String getCode() {

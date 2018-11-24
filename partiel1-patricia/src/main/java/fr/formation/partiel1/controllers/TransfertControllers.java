@@ -31,15 +31,22 @@ public class TransfertControllers {
 	return TRANSFERTS.get("01");
     }
 
+    @GET
+    @Path("/all")
+    @Produces(MediaType.APPLICATION_JSON)
+    public BankTransfert all() {
+	return TRANSFERTS.get("01");
+    }
+
     private static BankTransfert buildBTA() {
-	int sumA = 1000;
+	int sum = 1000;
 	LocalDateTime BTA_date = LocalDateTime.of(2018, 12, 24, 23, 30);
 	LocalDateTime BTA_date_wanted = LocalDateTime.of(2018, 12, 25, 23, 30);
-	Rib ribA = new Rib("30002", "00550", "0000157841Z", "25");
+	Rib ribA = new Rib("30002", "00550", "0000157841A", "26");
 	Iban ibanA = new Iban("FR", "33", ribA);
-	Rib ribB = new Rib("30002", "00550", "0000157841Z", "25");
+	Rib ribB = new Rib("30002", "00550", "0000157841B", "25");
 	Iban ibanB = new Iban("FR", "33", ribB);
-	BankTransfert Bta = new BankTransfert(sumA, ibanA, ibanB, BTA_date);
+	BankTransfert Bta = new BankTransfert(sum, BTA_date, ibanA, ibanB);
 	return Bta;
     }
 }

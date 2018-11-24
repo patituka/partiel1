@@ -16,11 +16,10 @@
 $(function() {
 	
 	$("#GETLASTTRANSFERT").click(function(){
-	    $.getJSON("http://localhost:8080/partiel1/api/transfert/", function(data){
+	    $.getJSON("http://localhost:8080/partiel1/api/transfert/one", function(data){
 	   
-	    	var content = "IBAN=" + data.date + ", Sum=" + data.sum + ", IbanA=" + data.ibanA + " IbanB= " + 
-	    	data.ibanB;
-	    	content += " Flag URL=" + data.flag + "<div><img src='" + data.flag + " '\" width=\"100\"</div>" ;
+	    	var content = "IBAN Account 1 = " + data.ibanA + "<br>IBAN Account 2 = " + data.ibanB + "<br>Sum=" + data.sum + "<br>IbanA=";
+	  
 	    	$( "<div/>" , {
 	    	   html: content
 	    	}).appendTo( "body" );

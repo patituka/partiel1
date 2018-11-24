@@ -10,6 +10,12 @@ public class Rib {
 
     private String ribClef;
 
+    /**
+     * @param bankCode
+     * @param sortCode
+     * @param accountNum
+     * @param ribClef
+     */
     public Rib(String bankCode, String sortCode, String accountNum,
 	    String ribClef) {
 	setBankCode(bankCode);
@@ -34,19 +40,23 @@ public class Rib {
 	this.ribClef = ribClef;
     }
 
+    public String getBankCode() {
+	return bankCode;
+    }
+
+    public String getRib() {
+	return accountNum + " " + ribClef + " " + bankCode + " " + sortCode;
+    }
+
+    public String getSortCode() {
+	return sortCode;
+    }
+
     public String getAccountNum() {
 	return accountNum;
     }
 
     public String getRibClef() {
 	return ribClef;
-    }
-
-    public String getBankCode() {
-	return bankCode;
-    }
-
-    public String getSortCode() {
-	return sortCode;
     }
 }

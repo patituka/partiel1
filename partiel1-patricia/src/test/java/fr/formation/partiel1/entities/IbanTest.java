@@ -6,13 +6,16 @@ import static org.junit.jupiter.api.Assertions.assertThrows;
 
 import org.junit.jupiter.api.Test;
 
+/**
+ * @author Administrateur
+ */
 public class IbanTest {
 
-     public static final String CLEF = "FR";
+    public static final String CLEF = "FR";
 
-     public static final String CODE = "33";
+    public static final String CODE = "33";
 
-     public static final Rib RIB = new Rib("30002", "00550", "0000157841Z",
+    public static final Rib RIB = new Rib("30002", "00550", "0000157841Z",
 	    "25");
 
     @Test
