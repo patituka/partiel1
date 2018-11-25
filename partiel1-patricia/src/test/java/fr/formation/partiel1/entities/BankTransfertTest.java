@@ -27,7 +27,7 @@ public class BankTransfertTest {
     @Test
     void shouldConstruct() {
 	assertDoesNotThrow(() -> {
-	    new BankTransfert(SUM_BT, ACCOUNT_A, ACCOUNT_B, DATE_BT);
+	    new BankTransfert(SUM_BT, DATE_BT, ACCOUNT_B, ACCOUNT_A);
 	});
     }
 }

@@ -25,18 +25,34 @@ public class Rib {
     }
 
     private void setBankCode(String bankCode) {
+	if (bankCode.length() != 5) {
+	    throw new IllegalArgumentException(
+		    "bankCode must have 5 caracteres");
+	}
 	this.bankCode = bankCode;
     }
 
     private void setSortCode(String sortCode) {
+	if (sortCode.length() != 5) {
+	    throw new IllegalArgumentException(
+		    "sortCode must have 5 caracteres");
+	}
 	this.sortCode = sortCode;
     }
 
     private void setAccountNum(String accountNum) {
+	if (accountNum.length() != 11) {
+	    throw new IllegalArgumentException(
+		    "accountNum must have 11 caracteres");
+	}
 	this.accountNum = accountNum;
     }
 
     private void setRibClef(String ribClef) {
+	if (ribClef.length() != 2) {
+	    throw new IllegalArgumentException(
+		    "ribClef must have 2 caracteres");
+	}
 	this.ribClef = ribClef;
     }
 
@@ -45,7 +61,7 @@ public class Rib {
     }
 
     public String getRib() {
-	return accountNum + " " + ribClef + " " + bankCode + " " + sortCode;
+	return bankCode + " " + sortCode + " " + accountNum + " " + ribClef;
     }
 
     public String getSortCode() {

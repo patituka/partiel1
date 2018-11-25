@@ -5,21 +5,37 @@
 <meta name="viewport" content="width=device-width, initial-scale=1">
 <link rel="stylesheet" href="https://maxcdn.bootstrapcdn.com/bootstrap/4.1.0/css/bootstrap.min.css">
 <link rel="stylesheet" href="https://ajax.googleapis.com/ajax/libs/jqueryui/1.12.1/themes/smoothness/jquery-ui.css">
+<link rel="stylesheet" href="index.css">
 <script src="https://ajax.googleapis.com/ajax/libs/jquery/3.3.1/jquery.min.js"></script>
 <script src="https://ajax.googleapis.com/ajax/libs/jqueryui/1.12.1/jquery-ui.min.js"></script>
 <script src="https://cdnjs.cloudflare.com/ajax/libs/popper.js/1.14.0/umd/popper.min.js"></script>
 <script src="https://maxcdn.bootstrapcdn.com/bootstrap/4.1.0/js/bootstrap.min.js"></script>
+<link rel="stylesheet" href="https://use.fontawesome.com/releases/v5.5.0/css/all.css" integrity="sha384-B4dIYHKNBt8Bc12p+WXckhzcICo0wtJAoU8YZTY5qE0Id1GSseTk6S+L3BlXeVIU" crossorigin="anonymous">
 
 <style type="text/css"></style>
 
 <script type="text/javascript">
+// var acc = document.getElementsByClassName("accordion");
+// var i;
+
+// for (i = 0; i < acc.length; i++) {
+//     acc[i].addEventListener("click", function() {
+//         this.classList.toggle("active");
+//         var panel = this.nextElementSibling;
+//         if (panel.style.display === "block") {
+//             panel.style.display = "none";
+//         } else {
+//             panel.style.display = "block";
+//         }
+//     });
+// }
 $(function() {
-	
 	$("#GETLASTTRANSFERT").click(function(){
-	    $.getJSON("http://localhost:8080/partiel1/api/transfert/one", function(data){
-	   
-	    	var content = "IBAN Account 1 = " + data.ibanA + "<br>IBAN Account 2 = " + data.ibanB + "<br>Sum=" + data.sum + "<br>IbanA=";
-	  
+	    $.getJSON("http://localhost:8080/partiel1-patricia/api/transfert/one", function(data){
+	   	    	var content = 	"IBAN Account 1 = " + data.ibanA + 
+	    					"<br>IBAN Account 2 = " + data.ibanB + 
+	    					"<br>Sum=" + data.sum + 
+	    					"<br>Date of transfert=" + data.dateBt;
 	    	$( "<div/>" , {
 	    	   html: content
 	    	}).appendTo( "body" );
@@ -30,9 +46,23 @@ $(function() {
 
 </head>
 <body>
-	<div>
-		<button class="btn" id="GETLASTTRANSFERT">Click me to get the last transfert</button>
-		<button class="btn" id="GETTRANSFERTS">Click me to get all the transferts</button>
-	</div>
+
+<!-- START NAVBAR -->
+	<nav class="navbar navbar-light bg-light"><i class="fas fa-piggy-bank"></i>
+  		<a class="navbar-brand" href="#">Transfert Account</a>
+	</nav>
+	<!-- END NAVBAR -->
+	
+	
+	<!-- START ACORDEON -->
+	<button class="accordion" id="GETLASTTRANSFERT">Click me to get the last transfert</button>
+<div class="panel">
+</div>
+
+<button class="accordion" id="GETTRANSFERTS">Click me to get all the transferts</button>
+<div class="panel">
+</div>
+	<!-- END ACORDEON -->
+
 </body>
 </html>

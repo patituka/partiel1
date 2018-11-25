@@ -25,6 +25,10 @@ public class BankTransfert {
 	    Iban ibanB) {
 	setSum(sum);
 	setDateBt(dateBt);
+	if (ibanA.equals(ibanB)) {
+	    throw new IllegalArgumentException(
+		    "Iban A must be different of iban B");
+	}
 	setIbanA(ibanA);
 	setIbanB(ibanB);
     }
